@@ -1,0 +1,73 @@
+
+services:
+  chatbot-backend:
+    build: ./chatbot/backend
+    container_name: chatbot-backend
+    env_file:
+      - ./chatbot/backend/.env
+    environment:
+      - ENV_FILE_PATH=./chatbot/backend/.env
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  chatbot-frontend:
+    build: ./chatbot/frontend
+    container_name: chatbot-frontend
+    env_file:
+      - ./chatbot/frontend/.env
+    environment:
+      - ENV_FILE_PATH=./chatbot/frontend/.env
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  db:
+    build: ./chatbot/backend/app/database
+    container_name: chatbot-db
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    
+  # pgweb:
+  #   image: sosedoff/pgweb
+  #   env_file: env/database
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
+  #   ports:
+  #     - "8081:8081"
+  #   restart: always
+
+  # test:
+  #   build: ./tests
+  #   container_name: test
+  #   volumes:
+  #     - ./tests:/app/tests
+  #     - ./chatbot/backend:/app/chatbot/backend  # Mapeia o código do backend
+  #   working_dir: /app/tests
+  #   depends_on:
+  #     - chatbot-backend
+  #   entrypoint: ["pytest"]
+  #   networks:
+  #     - app-network
+
+    # model:
+  #   build: ./model
+  #   container_name: model-service
+  #   environment:
+  #     - ENV_FILE_PATH=./model/.env
+  #   volumes:
+  #     - ./model/data:/app/data
+  #     - ./model/notebooks:/app/notebooks
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge

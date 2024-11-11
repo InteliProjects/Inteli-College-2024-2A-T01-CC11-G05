@@ -1,0 +1,92 @@
+users:
+  - id: "user1"
+    name: "João Silva"
+
+conversations:
+  - id: "conv1"
+    start_time: "2024-08-30T10:00:00"
+    status: "closed"
+    intentions: ['Reembolso','Como fazer remessa', 'Tempo de remessa']
+    user_id: "user1"
+    end_time: "2024-08-30T12:00:00"
+    messages:
+      - id: 1
+        user_message: "Olá, preciso de ajuda."
+        response_message: "Claro, em que posso ajudar?"
+        timestamp: "2024-08-30T10:01:00"
+        disliked: false
+      - id: 2
+        user_message: "Como faço uma transferência?"
+        response_message: "Você pode fazer uma transferência acessando sua conta online."
+        timestamp: "2024-08-30T10:02:00"
+        disliked: true
+      - id: 3
+        user_message: "E se der algum erro?"
+        response_message: "Você pode entrar em contato com o suporte se tiver problemas."
+        timestamp: "2024-08-30T10:03:00"
+        disliked: true
+      - id: 4
+        user_message: "Preciso de mais informações."
+        response_message: "Claro, qual informação adicional você precisa?"
+        timestamp: "2024-08-30T10:04:00"
+        disliked: true
+      - id: 5
+        user_message: "Obrigado, era isso."
+        response_message: "De nada! Tenha um ótimo dia."
+        timestamp: "2024-08-30T10:05:00"
+        disliked: false
+
+  - id: "conv2"
+    start_time: "2024-08-30T11:00:00"
+    status: "active"
+    intentions: []
+    user_id: "user1"
+    messages:
+      - id: 6
+        user_message: "Oi, qual o status do meu pedido?"
+        response_message: "Seu pedido está em processamento."
+        timestamp: "2024-08-30T11:01:00"
+        disliked: false
+      - id: 7
+        user_message: "Quanto tempo vai demorar?"
+        response_message: "Vai demorar aproximadamente 2 dias úteis."
+        timestamp: "2024-08-30T11:02:00"
+        disliked: false
+      - id: 8
+        user_message: "Complicado ein, Posso acelerar o processo?"
+        response_message: "Infelizmente, o tempo de processamento é fixo."
+        timestamp: "2024-08-30T11:03:00"
+        disliked: false
+      - id: 9
+        user_message: "Xau fiquei bravo."
+        response_message: "De nada, estou aqui para ajudar."
+        timestamp: "2024-08-30T11:04:00"
+        disliked: false
+      - id: 10
+        user_message: "Outra dúvida, como faço para cancelar?"
+        response_message: "Você pode cancelar acessando sua conta online."
+        timestamp: "2024-08-30T11:05:00"
+        disliked: false
+      - id: 11
+        user_message: "Qual é o prazo para o reembolso?"
+        response_message: "O reembolso é processado em até 7 dias úteis."
+        timestamp: "2024-08-30T11:06:00"
+        disliked: false
+      - id: 12
+        user_message: "Certo, vou seguir com o cancelamento."
+        response_message: "Entendido, se precisar de mais ajuda, estarei aqui."
+        timestamp: "2024-08-30T11:07:00"
+        disliked: false
+
+feedbacks:
+  - id: 1
+    conversation_id: "conv1"
+    rating: 3
+    comments: "Respostas rápidas, mas não resolveram meu problema."
+    timestamp: "2024-08-30T10:06:00"
+
+attendant_status:
+  - id: 1
+    name: "Atendente 1"
+    status: true
+    updated_at: "2024-08-30T09:00:00"

@@ -1,0 +1,17 @@
+# Ignorar pastas __pycache__ geradas pelo Python
+__pycache__/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar ambientes virtuais
+venv/
+.env/
+
+# Ignorar arquivos de configuração específicos do editor
+.vscode/
+.idea/
+
+
+# Ignorar node modules
+chatbot/frontend/node_modules
